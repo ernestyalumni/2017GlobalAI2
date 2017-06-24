@@ -20,3 +20,8 @@ or
 
 
 [github : cantren](https://github.com/cantren)
+  
+  
+   
+[Global AI Hackathon Challenge pdf](https://drive.google.com/file/d/0B2gcVmaEcT3VWno4Y2JrU1RJaGM/view)
+
