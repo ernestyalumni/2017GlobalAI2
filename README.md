@@ -2,10 +2,17 @@
 
 [Global AI Hackathon Challenge pdf](https://drive.google.com/file/d/0B2gcVmaEcT3VWno4Y2JrU1RJaGM/view)
 
-I preprocessed data (Facebook posts that includes categorical data), employed the Levenshtein distance as a metric as an alternative to word2vec (because there is no given corpus to give context to what the string-type data was in), and applied 3-fold cross-validation.  I also implemented the only GPU-accelerated (in the 2017 Global AI Hackathon, San Diego) Deep Neural Network (DNN) with theano  allowing for an arbitrary number of layers (or *axons*) and was able to train models in 1-2 minutes on a Dell Inspiron 15 in. 7000 Gaming with a nVidia GeForce GTX 1050, allowing for rapid tuning of hyperparameters.  The final DNN model achieved **72.4** accuracy on the test set (~110 test examples/samples).     
+## Summary 
+
+I preprocessed data (Facebook posts that includes categorical data), employed the Levenshtein distance as a metric as an alternative to `word2vec` (because there is no given corpus to give context to what the string-type data was in), and applied 3-fold cross-validation.
+
+I also implemented the only GPU-accelerated (in the 2017 Global AI Hackathon, San Diego) **Deep Neural Network (DNN)** with `theano` allowing for an arbitrary number of layers (or *axons*) and was able to train models in 1-2 minutes on a Dell Inspiron 15 in. 7000 Gaming with a nVidia GeForce GTX 1050, allowing for rapid tuning of hyperparameters.
+
+The final DNN model achieved **72.4** accuracy on the test set (~110 test examples/samples).     
+
+### Features
 
 - 3-fold cross validation on the dataset (training, (cross)-validation, and test sets) and the random shuffling of the posts (samples/examples) prior, assured the robustness of the DNN model trained upon and selected (through hyperparameter tuning); it really gives us confidence on the robustness of the accuracy of the model against other datasets to predict on.  
-
 - On a Dell Inspiron 15 in. 7000 Gaming laptop (with a nVidia GeForce GTX 1050 GPU), training Deep Neural Networks (including networks 13 layers, or what I prefer, 12 "axons", deep), on nearly 2000 training samples, took about less than a minute, allowing for us to tune hyperparameters (such as the number of layers or "axons") quickly.   
 - In the final, chosen Deep Neural Network (DNN) model, the DNN *accurately predicted* **72.4** percent of the test samples (about 114 posts) on whether it was fake, a mixture of real and fake, mostly true, etc.
 
