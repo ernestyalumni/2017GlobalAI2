@@ -2,9 +2,16 @@
 
 [Global AI Hackathon Challenge pdf](https://drive.google.com/file/d/0B2gcVmaEcT3VWno4Y2JrU1RJaGM/view)
 
+I preprocessed data (Facebook posts that includes categorical data), employed the Levenshtein distance as a metric as an alternative to word2vec (because there is no given corpus to give context to what the string-type data was in), and applied 3-fold cross-validation.  I also implemented the only GPU-accelerated (in the 2017 Global AI Hackathon, San Diego) Deep Neural Network (DNN) with theano  allowing for an arbitrary number of layers (or *axons*) and was able to train models in 1-2 minutes on a Dell Inspiron 15 in. 7000 Gaming with a nVidia GeForce GTX 1050, allowing for rapid tuning of hyperparameters.  The final DNN model achieved **72.4** accuracy on the test set (~110 test examples/samples).     
+
 - 3-fold cross validation on the dataset (training, (cross)-validation, and test sets) and the random shuffling of the posts (samples/examples) prior, assured the robustness of the DNN model trained upon and selected (through hyperparameter tuning); it really gives us confidence on the robustness of the accuracy of the model against other datasets to predict on.  
 
-We had chosen to tackle Challenge 2: Make News Real Again!  It is essentially a Supervised Learning task; given labeled ("fake news" vs. "real news") data, determine some mapping or model that would then predict which class a sample/example is in (is it "fake" or "real").
+- On a Dell Inspiron 15 in. 7000 Gaming laptop (with a nVidia GeForce GTX 1050 GPU), training Deep Neural Networks (including networks 13 layers, or what I prefer, 12 "axons", deep), on nearly 2000 training samples, took about less than a minute, allowing for us to tune hyperparameters (such as the number of layers or "axons") quickly.   
+- In the final, chosen Deep Neural Network (DNN) model, the DNN *accurately predicted* **72.4** percent of the test samples (about 114 posts) on whether it was fake, a mixture of real and fake, mostly true, etc.
+
+## Choosing a Challenge for the Global AI Hackathon
+
+We had chosen to tackle *Challenge 2: Make News Real Again!*  It is essentially a *Supervised Learning* task; given labeled ("fake news" vs. "real news") data, determine some mapping or model that would then predict which class a sample/example is in (is it "fake" or "real").
 
 ## Choice of model
 
@@ -43,6 +50,8 @@ In our case, how does one represent the column `Category`, with the arbitrarily 
 
 Thus, I chose to deploy the *[Levenshtein distance](https://en.wikipedia.org/wiki/Levenshtein_distance)* as a metric, in relation to the *mode* (value that appears most often) of each feature (i.e. column).
 
+The implementation of the Levenshtein distance as a Python function is given in file `NLP_nltk.py`.  
+
 ## Having a *Y* value, a target value
 
 In a supervised learning task, you need to have a *y* value, a target value, that the model predicts.  Being that the [Global AI Hackathon Challenge pdf](https://drive.google.com/file/d/0B2gcVmaEcT3VWno4Y2JrU1RJaGM/view) specified for a "model [that] should be able to determine a level of credibility", I chose to assign uniformly-divided values between 0 and 1 for each of the "classes" given in column "Rating":
@@ -70,6 +79,10 @@ The ratio splits were 0.85 for training, 0.1 for validation, and 0.05 for testin
 Furthermore, the posts (samples/examples) were randomly shuffled before being assigned to each fold.  This surely insured the robustness of the model that would be trained and finalized (through hyperparameter tuning).  
 
 With data preprocessing (data wrangling/data cleaning) and cross-validation done, I looked to working out the Deep Neural Network (DNN) to train with.   
+
+# The case for a Category Theory point of view of Machine Learning, a.k.a. how I rewrote the GPU-accelerated `theano` backend from scratch for a Deep Neural Network overnight for the hackathon the next day   
+
+
 
 ### Documents that can be edited by anyone 
 
