@@ -89,7 +89,7 @@ With data preprocessing (data wrangling/data cleaning) and cross-validation done
 
 # The case for a Category Theory point of view of Machine Learning, a.k.a. how I rewrote the GPU-accelerated `theano` backend from scratch for a Deep Neural Network overnight for the hackathon the next day   
 
-cf. ![DNN Commutative Diagram](https://github.com/ernestyalumni/2017GlobalAI2/raw/master/images/FBpostscolumnsScreenshot%20from%202017-07-17%2002-38-39.png)
+cf. ![DNN Commutative Diagram](https://github.com/ernestyalumni/2017GlobalAI2/raw/master/images/DNNCommutativeDiagramScreenshot%20from%202017-07-17%2002-30-31.png)
 
 Most of the time was spent preprocessing data (data cleaning, data wrangling); this is expected because it's like the Pareto ratio (as 1 Data Scientist from Tesla Motors once told me) - 80 percent of the time is spent on data cleaning, and 20 percent is actual model building.  By some time past midnight on the second day (the first and only full day of the hackathon), I realized that I had to come up with a Deep Neural Network model to actually train on.  
 
