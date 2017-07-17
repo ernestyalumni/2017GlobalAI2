@@ -89,7 +89,13 @@ With data preprocessing (data wrangling/data cleaning) and cross-validation done
 
 # The case for a Category Theory point of view of Machine Learning, a.k.a. how I rewrote the GPU-accelerated `theano` backend from scratch for a Deep Neural Network overnight for the hackathon the next day   
 
+cf. ![DNN Commutative Diagram](https://github.com/ernestyalumni/2017GlobalAI2/raw/master/images/FBpostscolumnsScreenshot%20from%202017-07-17%2002-38-39.png)
 
+Most of the time was spent preprocessing data (data cleaning, data wrangling); this is expected because it's like the Pareto ratio (as 1 Data Scientist from Tesla Motors once told me) - 80 percent of the time is spent on data cleaning, and 20 percent is actual model building.  By some time past midnight on the second day (the first and only full day of the hackathon), I realized that I had to come up with a Deep Neural Network model to actually train on.  
+
+All I did was to write down the above (short) commutative diagram and coded the Python classes with theano as is.
+
+I further expound on the 1-to-1 correspondence (isomorphism) between the hierarchy of Object Oriented Programming (OOP) classes for software engineering design and Deep Neural Networks (DNNs), in the context of category theory, in this writeup: [`DNN.pdf`](https://github.com/ernestyalumni/2017GlobalAI2/blob/master/DNN.pdf)
 
 ### Documents that can be edited by anyone 
 
